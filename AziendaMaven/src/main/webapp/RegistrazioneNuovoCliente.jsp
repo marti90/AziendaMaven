@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false" %>
 
-<jsp:useBean id="utente" class="modelBean.Utente" scope="session"></jsp:useBean>
+<jsp:useBean id="cliente" class="modelBean.Cliente" scope="session"></jsp:useBean>
 <jsp:include page="headerHtml.jsp"></jsp:include>
 <jsp:include page="navBarAdmin.jsp"></jsp:include>
 

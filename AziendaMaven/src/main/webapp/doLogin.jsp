@@ -33,19 +33,19 @@
         	 utente.setNome(u.getNome());
          	 utente.setCognome(u.getCognome());
          	 utente.setRuolo(u.getRuolo());
-         	 char ruolo = u.getRuolo();
+         	 String ruolo = u.getRuolo();
          	     switch(ruolo){
-         	     case 'D':
+         	     case "D":
          	    	 %>
               	    <jsp:forward page="HomePageDipendente.jsp" />
               	    <%
          	    	break;
-         	     case 'C':
+         	     case "C":
          	    	 %>
               	    <jsp:forward page="HomePageCliente.jsp" />
               	    <%
               	    break;
-         	     case 'A':
+         	     case "A":
          	    	 %>
               	    <jsp:forward page="HomePageAdmin.jsp" />
               	    <%
