@@ -1,37 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <link rel="Stylesheet" type="text/css" href="css/stat.css">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false" %>
 
-<title>Insert title here</title>
-</head>
-<body>
+<jsp:useBean id="cliente" class="modelBean.Cliente" scope="session"></jsp:useBean>
 
-<div id="Container">
-  
-  <div id="header">
-<h1>Header</h1>
-  
-  </div>
-  
-  
-    <div  class="menu">
- 
-  <jsp:include page="MenuLateraleCliente.jsp"></jsp:include>
-  
-  </div>
-    <div id="content">
-   <h1>Welcome to Cliente homePage </h1>
-  </div>
-    <div id="footer">
- <h1>Footer</h1>
- 
-  </div>
-  
-  
-  </div> <!--  end of container -->
-</body>
-</html>
+<jsp:include page="../headerHtml.jsp"></jsp:include>
+<jsp:include page="navBarCliente.jsp"></jsp:include>
+
+<% 
+if(cliente.isValid()){
+%>
+
+<div class="ch-container">
+   <div class="row">
+        
+        <jsp:include page="MenuLateraleCliente.jsp"></jsp:include>
+        <noscript>
+            <div class="alert alert-block col-md-12">
+                <h4 class="alert-heading">Warning!</h4>
+
+                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                    enabled to use this site.</p>
+            </div>
+        </noscript>
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+ <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Cliente</a>
+        </li>
+    </ul>
+</div>
+<div class=" row">
+
+          <!-- Devo scrivere per ogni pagina -->
+          
+          <h1>Benvenuto nella tua Pagina Personale ${cliente.nome}!</h1>
+</div>
+
+ </div>
+</div>
+
+<hr>
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Settings</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Here settings can be configured...</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+                </div>
+            </div>
+         </div>
+    </div>
+    
+    <jsp:include page="../footer.jsp"></jsp:include>
+
+</div><!--/.fluid-container-->
+
+<jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
+
+<%
+   }else {
+	   response.sendRedirect("../Login/Login.jsp");
+   }
+%>
+
+    

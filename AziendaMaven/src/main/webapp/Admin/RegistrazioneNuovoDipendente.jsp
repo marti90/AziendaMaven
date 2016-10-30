@@ -6,7 +6,7 @@
 <jsp:useBean id="admin" class="modelBean.Admin"scope="session"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
-<jsp:include page="../navBarAdmin.jsp"></jsp:include>
+<jsp:include page="navBarAdmin.jsp"></jsp:include>
 
 <% 
 if(admin.isValid()){

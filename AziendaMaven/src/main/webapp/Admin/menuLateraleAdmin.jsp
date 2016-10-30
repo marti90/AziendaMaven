@@ -15,12 +15,14 @@
                         </li>
                         <li><a class="ajax-link" href="elencoClienti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Clienti</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
+                        <li><a class="ajax-link" href="RegistrazioneNuovoDipendente.jsp"><i class="glyphicon glyphicon-plus"></i><span>  Nuovo Dipendente</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Gallery</span></a>
+                        <li><a class="ajax-link" href="elencoDipendenti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Dipendenti</span></a>
                         </li>
-                        <li><a class="ajax-link" href="form.html"><i
-                                    class="glyphicon glyphicon-edit"></i><span> Forms</span></a></li>
+                        <li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-edit"></i><span> Emissione Busta Paga</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="elencoDipendenti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Buste Paga</span></a>
+                        </li>
                         <li class="nav-header hidden-md">Sample Section</li>
                         <li><a class="ajax-link" href="table.html"><i
                                     class="glyphicon glyphicon-align-justify"></i><span> Tables</span></a></li>
