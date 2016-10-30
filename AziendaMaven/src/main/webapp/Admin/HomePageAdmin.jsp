@@ -1,11 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false" %>
-<jsp:useBean id="utente" class="modelBean.Utente" scope="session"></jsp:useBean>
 
-<jsp:include page="headerHtml.jsp"></jsp:include>
+<jsp:useBean id="admin" class="modelBean.Admin" scope="session"></jsp:useBean>
 
-<jsp:include page="navBarAdmin.jsp"></jsp:include>
+<jsp:include page="../headerHtml.jsp"></jsp:include>
+<jsp:include page="../navBarAdmin.jsp"></jsp:include>
+
+<% 
+if(admin.isValid()){
+%>
     
 <div class="ch-container">
    <div class="row">
@@ -36,14 +41,7 @@
 
           <!-- Devo scrivere per ogni pagina -->
           
-          <h1>Benvenuto nella tua Pagina Personale ${utente.nome}!</h1>
-          
-          
-          
-          
-          
-          
-
+          <h1>Benvenuto nella tua Pagina Personale ${admin.nome}!</h1>
 </div>
 
  </div>
@@ -70,8 +68,14 @@
          </div>
     </div>
     
-    <jsp:include page="footer.jsp"></jsp:include>
+    <jsp:include page="../footer.jsp"></jsp:include>
 
 </div><!--/.fluid-container-->
 
-<jsp:include page="IncludeScriptEnd.jsp"></jsp:include>
+<jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
+
+<%
+   }else {
+	   response.sendRedirect("../Login/Login.jsp");
+   }
+%>

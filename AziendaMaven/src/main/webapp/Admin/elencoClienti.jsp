@@ -4,15 +4,18 @@
 <%@page import="service.Gestione"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 
-<jsp:useBean id="cliente" class="modelBean.Cliente" scope="request"></jsp:useBean>
-<jsp:setProperty property="*" name="cliente" />
+<jsp:useBean id="admin" class="modelBean.Admin" scope="request"></jsp:useBean>
 
-<jsp:include page="headerHtml.jsp"></jsp:include>
+<jsp:include page="../headerHtml.jsp"></jsp:include>
+<jsp:include page="../navBarAdmin.jsp"></jsp:include>
 
-<jsp:include page="navBarAdmin.jsp"></jsp:include>
+<% 
+if(admin.isValid()){
+%> 
 
 <div class="ch-container">
       <div class="row">
@@ -32,26 +35,33 @@
                <div>
                     <ul class="breadcrumb">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="HomePageAdmin.jsp">Home</a>
                         </li>
                         <li>
                             <a href="#">Admin</a>
+                        </li>
+                        <li>
+                            <a href="#">Elenco Clienti</a>
                         </li>
                     </ul>
                </div>
                 
                <div class=" row">
-
-                              <!-- Devo scrivere per ogni pagina -->
-                 <div id="content">
-
-                    <h2>Elenco Clienti</h2>
-
-                    <table border="1">
-	                        <thead>
-
+                 
+                  <div class="box col-md-12">
+                  <div class="box-inner">
+                  <div class="box-header well" data-original-title="">
+                          <h2><i class="glyphicon glyphicon-th-list"></i> Elenco Clienti</h2>
+                  <div class="box-icon">
+                          <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>
+                          <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                          <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+                  </div>
+               </div>
+               <div class="box-content">
+                  <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+                          <thead>
 		                        <tr>
-			                            <th>Id</th>
 			                            <th>Nome</th>
 		                            	<th>Cognome</th>
 		                            	<th>Username</th>
@@ -61,24 +71,19 @@
 			
 	                        	</tr>
 
-	                        </thead>
+	                       </thead>
+	                       <tbody>
 
 	                   <%
 		                    Gestione g= new Gestione();
-	                    	List<Cliente> clienti = g.getTuttiClienti();
-		
-	                        int i =1;
-                            for(Cliente c : clienti){ 
-                                cliente.setNome(c.getNome());
-                                cliente.setCognome(c.getCognome());
-                                cliente.setUsername(c.getUsername());
-                                cliente.setRagioneSociale(c.getRagioneSociale());
-                                cliente.setpIva(c.getpIva());
-              
+	                    	List<Cliente> lista = g.getTuttiClienti();
+		                    session.setAttribute("lista", lista);
               
                        %>
+                       
+                      <c:set var="i" value="1" scope="page" />
+                      <c:forEach items="${lista}" var="cliente">
                       <tr>
-                                <td class="center"><%out.println(i);%> </td>
                                 <td class="center">${cliente.nome}</td>
                                 <td class="center"><c:out value="${cliente.cognome}"></c:out></td>
                                 <td class="center"><c:out value="${cliente.username}"></c:out></td>
@@ -94,19 +99,18 @@
                                           Delete
                                      </a>
                                 </td>
-                       <%
-                            i++;
-                            }
-                       %>
-
-
+                      
                        </tr>
+                       </c:forEach>
+                      </tbody>
                     </table>
                 </div>
               </div>
 
         </div>
      </div>
+</div>
+</div>
 
      <hr>
          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -129,9 +133,14 @@
             </div>
          </div>
     
-    <jsp:include page="footer.jsp"></jsp:include>
+    <jsp:include page="../footer.jsp"></jsp:include>
 
 </div><!--/.fluid-container-->
 
-<jsp:include page="IncludeScriptEnd.jsp"></jsp:include>      
+<jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>      
 
+<%
+}else {
+	response.sendRedirect("../Accesso/login.jsp");
+}
+%>

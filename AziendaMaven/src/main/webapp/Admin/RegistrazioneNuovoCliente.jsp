@@ -3,14 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 
-<jsp:useBean id="admin" class="modelBean.Admin"scope="session"></jsp:useBean>
+<jsp:useBean id="admin" class="modelBean.Admin" scope="session"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="../navBarAdmin.jsp"></jsp:include>
-
-<% 
-if(admin.isValid()){
-%>    
 
 <div class="ch-container">
    <div class="row">
@@ -27,24 +23,25 @@ if(admin.isValid()){
 
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-             <div>
-                  <ul class="breadcrumb">
-                      <li>
-                         <a href="HomePageAdmin.jsp">Home</a>
-                      </li>
-                      <li>
-                         <a href="#">Admin</a>
-                      </li>
-                      <li>
-                         <a href="#">Nuovo Dipendente</a>
-                      </li>
-                  </ul>
-             </div>
-   <div class=" row">
+ <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="HomePageAdmin.jsp">Home</a>
+        </li>
+        <li>
+            <a href="#">Admin</a>
+        </li>
+        <li>
+            <a href="#">Nuovo Cliente</a>
+        </li>
+    </ul>
+</div>
+
+<div class=" row">
    <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> Registra Nuovo Dipendente</h2>
+                <h2><i class="glyphicon glyphicon-edit"></i> Registra Nuovo Cliente</h2>
             <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
                             class="glyphicon glyphicon-cog"></i></a>
@@ -55,7 +52,7 @@ if(admin.isValid()){
              </div>
              </div>
              <div class="box-content">
-             <form role="form" action="doRegistrazioneNuovoDipendente.jsp" method="post">
+             <form role="form" action="doRegistrazioneNuovoCliente.jsp" method="post">
              
                     <div class="form-group">
                         <label>Nome</label>
@@ -78,13 +75,13 @@ if(admin.isValid()){
                     </div>
                     
                     <div class="form-group">
-                        <label>Posizione</label>
-                        <input type="text" class="form-control" id="posizione" placeholder="Inserisci Posizione">
+                        <label>Ragione Sociale</label>
+                        <input type="text" class="form-control" id="ragioneSociale" placeholder="Inserisci Ragione Sociale">
                     </div>
                     
                     <div class="form-group">
-                        <label>Stipendio</label>
-                        <input type="text" class="form-control" id="stipendio" placeholder="Inserisci Stipendio">
+                        <label>Partita IVA</label>
+                        <input type="text" class="form-control" id="partitaIva" placeholder="Inserisci Partita IVA">
                     </div>
                     
                     <button type="submit" class="btn btn-default">Registra</button>
@@ -94,7 +91,7 @@ if(admin.isValid()){
       </div>
    </div>
    </div>
-   
+
 <hr>
    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
@@ -115,16 +112,10 @@ if(admin.isValid()){
             </div>
          </div>
     </div>
-    
     </div>
-  
+    
+   
   <jsp:include page="../footer.jsp"></jsp:include>
   </div>
   </div> <!--  end of container -->
   <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
-
-<%
-}else {
-	response.sendRedirect("../Accesso/login.jsp");
-}
-%>

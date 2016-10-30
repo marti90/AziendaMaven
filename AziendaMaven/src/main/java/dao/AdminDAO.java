@@ -53,7 +53,9 @@ import utility.HibernateUtility;
 				tx = session.getTransaction();
 				tx.begin();
 				
-				a = session.get(Admin.class, username);
+				Query query=session.createQuery("from Utente where username=:usernameInserito");
+				query.setString("usernameInserito", username);
+				a=(Admin) query.uniqueResult();
 					
 				tx.commit();
 					
@@ -126,8 +128,8 @@ import utility.HibernateUtility;
 			return a;
 		}
 		
-		//2.c READ tutti gli utenti della tabella
-	    @SuppressWarnings("unchecked")
+		//2.c READ tutti gli admin della tabella
+	   
 		public List<Admin> readAdmin(){
 			
 			List<Admin> utenti = new ArrayList<Admin>();

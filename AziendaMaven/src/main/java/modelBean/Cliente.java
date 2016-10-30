@@ -15,10 +15,10 @@ public class Cliente extends Utente implements Serializable{
 	private String pIva;
 	
 	public Cliente(){
-		super();
+		
 	}
 	
-	public Cliente(String nome, String cognome, String username, String ruolo, String password, String ragioneSociale, String pIva) {
+	public Cliente(String nome, String cognome, String username, char ruolo, String password, String ragioneSociale, String pIva) {
 		super(nome,cognome,username,ruolo,password);
 		this.ragioneSociale = ragioneSociale;
 		this.pIva = pIva;
@@ -39,5 +39,22 @@ public class Cliente extends Utente implements Serializable{
 	public void setpIva(String pIva) {
 		this.pIva = pIva;
 	}
+	
+	public boolean isValid() {
+
+		boolean res=false;
+		if(!nome.isEmpty() && nome!=null && 
+				!cognome.isEmpty() && cognome!=null &&
+				!username.isEmpty() && username!=null &&
+				!password.isEmpty() && password!=null &&
+				!ragioneSociale.isEmpty() && ragioneSociale!=null &&
+				!pIva.isEmpty() && pIva!=null) {
+			
+			res=true;
+		}
+		
+		return res;
+	}
+
 	
 }

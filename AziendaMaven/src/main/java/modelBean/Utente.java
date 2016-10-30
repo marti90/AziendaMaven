@@ -26,13 +26,13 @@ public class Utente implements Serializable{
 	protected String cognome;
 	protected String username;
 	protected String password;
-	protected String ruolo;
+	protected char ruolo;
 	
 	public Utente(){
 		
 	}
 	
-	public Utente(String nome, String cognome, String username,	String ruolo, String password) {
+	public Utente(String nome, String cognome, String username,	char ruolo, String password) {
 		
 		this.nome = nome;
 		this.cognome = cognome;
@@ -82,11 +82,11 @@ public class Utente implements Serializable{
 		this.password = password;
 	}
 
-	public String getRuolo() {
+	public char getRuolo() {
 		return ruolo;
 	}
 
-	public void setRuolo(String ruolo) {
+	public void setRuolo(char ruolo) {
 		this.ruolo = ruolo;
 	}
 	

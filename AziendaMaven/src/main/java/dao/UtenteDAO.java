@@ -53,7 +53,9 @@ public class UtenteDAO {
 			tx = session.getTransaction();
 			tx.begin();
 			
-			u = session.get(Utente.class, username);
+			Query query=session.createQuery("from UtenteBean where username=:usernameInserito");
+			query.setString("usernameInserito", username);
+	        u=(Utente) query.uniqueResult();
 				
 			tx.commit();
 				
@@ -127,7 +129,6 @@ public class UtenteDAO {
 	}
 	
 	//2.c READ tutti gli utenti della tabella
-    @SuppressWarnings("unchecked")
 	public List<Utente> readUtenti(){
 		
 		List<Utente> utenti = new ArrayList<Utente>();

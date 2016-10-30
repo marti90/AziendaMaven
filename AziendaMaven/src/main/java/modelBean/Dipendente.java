@@ -18,7 +18,7 @@ public class Dipendente extends Utente implements Serializable{
 		super();
 	}
 
-	public Dipendente(String nome, String cognome, String username, String ruolo, String password, double stipendio, String posizione) {
+	public Dipendente(String nome, String cognome, String username, char ruolo, String password, double stipendio, String posizione) {
 		super(nome,cognome,username,ruolo,password);
 		this.stipendio = stipendio;
 		this.posizione = posizione;
@@ -39,5 +39,20 @@ public class Dipendente extends Utente implements Serializable{
 	public void setPosizione(String posizione) {
 		this.posizione = posizione;
 	}
+	
+	public boolean isValid() {
+
+		boolean res=false;
+		if(!nome.isEmpty() && nome!=null && 
+				!cognome.isEmpty() && cognome!=null &&
+				!username.isEmpty() && username!=null &&
+				!password.isEmpty() && password!=null &&
+				!posizione.isEmpty() && posizione!=null) {
+			
+			res=true;
+		}
+		
+		return res;
+}
 	
 }

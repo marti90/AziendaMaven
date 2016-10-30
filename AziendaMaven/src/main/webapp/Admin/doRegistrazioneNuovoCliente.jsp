@@ -2,7 +2,7 @@
 <%@page import="modelBean.Cliente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+<jsp:useBean id="utente" class="modelBean.Utente" scope="session"></jsp:useBean>
 <jsp:useBean id="error" class="utility.ErrorBean" scope="request"></jsp:useBean>
 
     <%
@@ -22,10 +22,11 @@
     	password=g.convertiPass(password);
     	c.setPassword(password);
         g.registraCliente(c);
+        g.registraRubrica(username);
         
         %>
     	<jsp:forward page="HomePageAdmin.jsp"/>
-    <%
+        <%
     }
     else{
     	error.setError("ATTENZIONE! i dati non sono validi!");

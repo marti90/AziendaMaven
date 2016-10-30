@@ -18,6 +18,7 @@
     	<groupId>javax.servlet</groupId>
     	<artifactId>javax.servlet-api</artifactId>
     	<version>3.0.1</version>
+    	<scope>provided</scope>
     </dependency>
     <dependency>
     	<groupId>org.hibernate</groupId>
@@ -30,9 +31,14 @@
     	<version>12.1.0.1</version>
     </dependency>
     <dependency>
-    	<groupId>javax.servlet</groupId>
+    	<groupId>jstl</groupId>
     	<artifactId>jstl</artifactId>
     	<version>1.2</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.7</version>
     </dependency>
   </dependencies>
   <build>

@@ -14,10 +14,10 @@ public class Admin extends Utente implements Serializable{
 	private String livelloAccesso;
 	
 	public Admin(){
-		super();
+		
 	}
 
-	public Admin(String nome, String cognome, String username, String ruolo, String password, String livelloAccesso) {
+	public Admin(String nome, String cognome, String username, char ruolo, String password, String livelloAccesso) {
 		super(nome,cognome,username,ruolo,password);
 		this.setLivelloAccesso(livelloAccesso);
 	}
@@ -30,6 +30,20 @@ public class Admin extends Utente implements Serializable{
 		this.livelloAccesso = livelloAccesso;
 	}
 	
+	public boolean isValid() {
+		
+		boolean res=false;
+		if(!nome.isEmpty() && nome!=null && 
+				!cognome.isEmpty() && cognome!=null &&
+				!username.isEmpty() && username!=null &&
+				!password.isEmpty() && password!=null &&
+				!livelloAccesso.isEmpty() && livelloAccesso!=null) {
+			
+			res=true;
+		}
+		
+		return res;
+}
 	
 
 }

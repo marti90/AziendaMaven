@@ -20,7 +20,7 @@ public class RubricaDAO {
 	        tx=session.getTransaction();
 	        tx.begin();
 	        
-	        r=session.get(RubricaModel.class,  r_id);
+	        r=session.get(RubricaModel.class, r_id);
 	        
 	        tx.commit(); 
             
@@ -46,8 +46,7 @@ public class RubricaDAO {
 	        tx=session.getTransaction();
             tx.begin();
 	        
-			Query query = session.createQuery("from RubricaModel where nome =: nomeInserito");
-			
+			Query query = session.createQuery("from RubricaModel where nome =:nomeInserito");
 			query.setString("nomeInserito",nome);
 	        r =  (RubricaModel) query.uniqueResult();
 	       
@@ -88,7 +87,7 @@ public class RubricaDAO {
 		return res;
 	}
 	
-    public boolean deleteRubrica(long id_rubrica){
+    public boolean deleteRubrica(RubricaModel r){
     	
     	boolean res = false;
 		Session session=HibernateUtility.openSession();
@@ -98,7 +97,7 @@ public class RubricaDAO {
 		       tx=session.getTransaction();
 		       tx.begin();
 		        
-		       //session.persist(r);
+		       session.delete(r);
 		        
 		       tx.commit(); 
 		       res = true;

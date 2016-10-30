@@ -53,7 +53,9 @@ public class DipendenteDAO {
 				tx = session.getTransaction();
 				tx.begin();
 				
-				d = session.get(Dipendente.class, username);
+				Query query=session.createQuery("from UtenteBean where username=:usernameInserito");
+				query.setString("usernameInserito", username);
+		        d=(Dipendente) query.uniqueResult();
 					
 				tx.commit();
 					
@@ -126,11 +128,11 @@ public class DipendenteDAO {
 			return d;
 		}
 		
-		//2.c READ tutti gli utenti della tabella
-	    @SuppressWarnings("unchecked")
+		//2.c READ tutti i dipendenti della tabella
+	   
 		public List<Dipendente> readDipendenti(){
 			
-			List<Dipendente> utenti = new ArrayList<Dipendente>();
+			List<Dipendente> dipendenti = new ArrayList<Dipendente>();
 			Session session=HibernateUtility.openSession();
 			Transaction tx=null;
 			
@@ -139,7 +141,7 @@ public class DipendenteDAO {
 		        tx.begin();
 		        
 		        Query query = session.createQuery("from Dipendente");
-		        utenti= query.list();
+		        dipendenti= query.list();
 		        
 		        tx.commit(); 
 	            
@@ -150,7 +152,7 @@ public class DipendenteDAO {
 		         session.close();
 		    }
 		    
-			return utenti;
+			return dipendenti;
 			
 		}
 		

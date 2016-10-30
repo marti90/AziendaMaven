@@ -53,7 +53,9 @@ public class ClienteDAO {
 				tx = session.getTransaction();
 				tx.begin();
 				
-				c = session.get(Cliente.class, username);
+				Query query=session.createQuery("from Utente where username=:usernameInserito");
+				query.setString("usernameInserito", username);
+				c=(Cliente) query.uniqueResult();
 					
 				tx.commit();
 					
@@ -128,7 +130,6 @@ public class ClienteDAO {
 		
 		//2.c READ tutti gli utenti della tabella
 	   
-		@SuppressWarnings("unchecked")
 		public List<Cliente> readClienti(){
 			
 			List<Cliente> clienti = new ArrayList<Cliente>();
@@ -139,8 +140,7 @@ public class ClienteDAO {
 		        tx=session.getTransaction();
 		        tx.begin();
 		        
-		        Query query = session.createQuery("from Utente where ruolo:=ruoloInserito");
-		        query.setString("ruoloInserito", "C");
+		        Query query = session.createQuery("from Cliente");
 		        clienti= query.list();
 		        
 		        tx.commit(); 

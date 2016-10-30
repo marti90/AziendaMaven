@@ -5,14 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<jsp:include page="headerHtml.jsp"></jsp:include>
-<jsp:include page="navBarAdmin.jsp"></jsp:include>
+<jsp:include page="../headerHtml.jsp"></jsp:include>
 
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-      <title>Login Page</title>
-   </head>
-   
    <body>
       <div id="ch-container">
          <div class="row">
@@ -59,11 +53,11 @@
          </div>
         </div>
         
-      <jsp:include page="footer.jsp"></jsp:include>
+      <jsp:include page="../footer.jsp"></jsp:include>
       
    </div>
    
-<jsp:include page="IncludeScriptEnd.jsp"></jsp:include>
+<jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
 
 </body>
 

@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -35,7 +36,7 @@ public class VoceDAO {
 		return res;
 	}
 	
-	public VoceModel leggiVoceConId(long id_voce){
+	public VoceModel readVoceConId(long id_voce){
 		
 		VoceModel v = null;
 		
@@ -61,31 +62,32 @@ public class VoceDAO {
 		return v;
 	}
 	
-	/*public boolean cancellaVoceConId(long id_voce){
-		boolean res = false;
-		Connection con = null;
-		String sql = "DELETE FROM VOCE WHERE ID_VOCE=?";
-		PreparedStatement pst = null;
-		try {
-			 con = DataSource.getInstance().getConnection();
-			 pst=con.prepareStatement(sql);
-			 pst.setLong(1, id_voce);
-			 int rs=pst.executeUpdate();
-			 
-			 if(rs>0){
-				 res = true;
-			 }
-			 
-		} catch (SQLException | IOException | PropertyVetoException e) {
-			e.printStackTrace();
-		} finally{
-			if (pst != null) try { pst.close(); } catch (SQLException e) {e.printStackTrace();}
-			if (con != null) try { con.close(); } catch (SQLException e) {e.printStackTrace();}
+	public VoceModel trovaVoce(String nome, String cognome, long id_rubrica)
+	{
+		VoceModel v=null;
+		Session session =HibernateUtility.openSession();
+		Transaction tx=null;
+
+		try{
+		tx=session.getTransaction();
+		tx.begin();
+
+		Query query=session.createQuery("from VoceModel where RubricaModel_id_rubrica=:idInserito and nome=:nomeInserito and cognome=:cognomeInserito");
+		query.setLong("idInserito", id_rubrica);
+		query.setString("nomeInserito", nome);
+		query.setString("cognomeInserito", cognome);
+		v=(VoceModel) query.uniqueResult();
+		 
+		 tx.commit();
+		}catch(Exception ex){
+			tx.rollback();
+		}finally{
+			session.close();
 		}
 		
-		return res;
-	}
-	*/
+		return v;
+    }
+	
 	public boolean aggiornaVoce(VoceModel v){
 		
 		boolean res = false;
@@ -113,7 +115,6 @@ public class VoceDAO {
 	
 	public List<VoceModel> getVociPerUnaRubrica(String nome){
 		
-		
 		RubricaModel r = null;
 		Session session=HibernateUtility.openSession();
 		Transaction tx=null;
@@ -138,5 +139,30 @@ public class VoceDAO {
 		return r.getListaVoci();
 		
 	}
+	
+    public boolean deleteVoce(VoceModel v){
+    	
+    	boolean res = false;
+		Session session=HibernateUtility.openSession();
+		Transaction tx=null;
+		
+		try{
+		       tx=session.getTransaction();
+		       tx.begin();
+		        
+		       session.delete(v);
+		        
+		       tx.commit(); 
+		       res = true;
+	            
+	     }catch(Exception ex){
+		       tx.rollback();
+
+	     }finally{
+		       session.close();
+	     }
+		
+		return res;
+    }
 
 }
