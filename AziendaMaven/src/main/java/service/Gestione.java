@@ -127,6 +127,13 @@ private VoceDAO vDao= new VoceDAO();
 
 	}
     
+    public VoceModel getVoce(RubricaModel r, VoceModel v){
+    	
+    	VoceModel voce=null;
+    	voce= vDao.readVoce(v.getNome(), v.getCognome(), r.getId_rubrica());
+    	return voce;
+    }
+    
     public List<VoceModel> getVociDiUnaRubrica(RubricaModel r){
     	
     	List<VoceModel> listaVoci = vDao.getVociPerUnaRubrica(r.getNome());

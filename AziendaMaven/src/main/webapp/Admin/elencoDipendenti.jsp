@@ -60,7 +60,8 @@ if(admin.isValid()){
                <div class="box-content">
                   <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                           <thead>
-		                        <tr>
+		                        <tr> 
+		                                <th>Numero</th>
 			                            <th>Nome</th>
 		                            	<th>Cognome</th>
 		                            	<th>Username</th>
@@ -83,6 +84,7 @@ if(admin.isValid()){
                       <c:set var="i" value="1" scope="page" />
                       <c:forEach items="${lista}" var="dipendente">
                       <tr>
+                                <td class="center"><c:out value="${i}" /></td>
                                 <td class="center">${cliente.nome}</td>
                                 <td class="center"><c:out value="${dipendente.cognome}"></c:out></td>
                                 <td class="center"><c:out value="${dipendente.username}"></c:out></td>
@@ -100,6 +102,7 @@ if(admin.isValid()){
                                 </td>
                       
                        </tr>
+                       <c:set var="i" value="${i + 1}" scope="page" />
                        </c:forEach>
                       </tbody>
                     </table>
@@ -140,6 +143,6 @@ if(admin.isValid()){
 
 <%
 }else {
-	response.sendRedirect("../Accesso/login.jsp");
+	response.sendRedirect("../Login/Login.jsp");
 }
 %>

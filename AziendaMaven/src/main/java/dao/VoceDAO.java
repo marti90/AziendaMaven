@@ -62,7 +62,7 @@ public class VoceDAO {
 		return v;
 	}
 	
-	public VoceModel trovaVoce(String nome, String cognome, long id_rubrica)
+	public VoceModel readVoce(String nome, String cognome, long id_rubrica)
 	{
 		VoceModel v=null;
 		Session session =HibernateUtility.openSession();

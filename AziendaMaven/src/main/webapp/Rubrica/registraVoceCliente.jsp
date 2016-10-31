@@ -5,32 +5,112 @@
 
 <jsp:useBean id="cliente" class="modelBean.Cliente" scope="session"></jsp:useBean>
 
+<jsp:include page="../headerHtml.jsp"></jsp:include>
+<jsp:include page="../Cliente/navBarCliente.jsp"></jsp:include>
+
 <%
 if(cliente.isValid()){
 %> 
 
-<div id="content">
-<h1>Aggiungi una Voce nella Rubrica</h1>
+<div class="ch-container">
+   <div class="row">
+        
+        <jsp:include page="../Cliente/MenuLateraleCliente.jsp"></jsp:include>
+        <noscript>
+            <div class="alert alert-block col-md-12">
+                <h4 class="alert-heading">Warning!</h4>
 
-<form action="doRegistraVoceCliente.jsp" method="post">
-Nome: <input type="text" name="nome" /> <br>
-Cognome: <input type="text" name="cognome"/> <br>
-Telefono: <input type="text" name="telefono"/> <br>
+                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                    enabled to use this site.</p>
+            </div>
+        </noscript>
 
-<input type="submit" value ="Registra"/>
-
-</form>
- </div>
-    <div id="footer">
- <h1>Footer</h1>
- 
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+ <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="../Cliente/HomePageCliente.jsp">Home</a>
+        </li>
+        <li>
+            <a href="#">Cliente</a>
+        </li>
+        <li>
+            <a href="#">Nuova Voce</a>
+        </li>
+    </ul>
 </div>
 
-</body>
-</html>
+<div class=" row">
+   <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i> Aggiungi una Voce nella Rubrica</h2>
+            <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+             </div>
+             </div>
+             <div class="box-content">
+             <form role="form" action="doRegistraVoceCliente.jsp" method="post">
+             
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Inserisci Nome" >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Cognome</label>
+                        <input type="text" class="form-control" id="cognome" placeholder="Inserisci Cognome">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="text" class="form-control" id="username" placeholder="Inserisci Username">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-default">Registra</button>
+                    
+             </form>
+        </div>
+      </div>
+   </div>
+   </div>
+
+<hr>
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Settings</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Here settings can be configured...</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+                </div>
+            </div>
+         </div>
+    </div>
+    </div>
+    
+   
+  <jsp:include page="../footer.jsp"></jsp:include>
+  </div>
+  </div> <!--  end of container -->
+  <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
 
 <%
 }else {
-	response.sendRedirect("Login.jsp");
+	response.sendRedirect("../Login/Login.jsp");
 }
 %>
