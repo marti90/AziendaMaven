@@ -19,7 +19,7 @@
                         </li>
                         <li><a class="ajax-link" href="elencoDipendenti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Dipendenti</span></a>
                         </li>
-                        <li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-edit"></i><span> Emissione Busta Paga</span></a>
+                        <li><a class="ajax-link" href="RegistrazioneBustaPaga.jsp"><i class="glyphicon glyphicon-edit"></i><span> Emissione Busta Paga</span></a>
                         </li>
                         <li><a class="ajax-link" href="elencoDipendenti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Buste Paga</span></a>
                         </li>

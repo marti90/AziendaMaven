@@ -16,10 +16,8 @@
     
     Gestione g= new Gestione();
     
-    if(dipendente.isValid() && g.getUtenteConUsername(dipendente.getUsername())==null) {
+    if(g.getUtenteConUsername(dipendente.getUsername())==null) {
         
-    	String password=g.convertiPass(dipendente.getPassword());
-    	dipendente.setPassword(password);
         g.registraDipendente(dipendente);
         g.registraRubrica(dipendente.getUsername());
         

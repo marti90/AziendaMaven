@@ -1,16 +1,19 @@
+<%@page import="modelBean.Dipendente"%>
+<%@page import="service.Gestione"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+</html><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
+<script type="text/javascript" src="jQueryBuste.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <jsp:useBean id="admin" class="modelBean.Admin" scope="session"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="navBarAdmin.jsp"></jsp:include>
-
-<% 
-if(admin.isValid()){
-%>    
 
 <div class="ch-container">
    <div class="row">
@@ -27,24 +30,25 @@ if(admin.isValid()){
 
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-             <div>
-                  <ul class="breadcrumb">
-                      <li>
-                         <a href="HomePageAdmin.jsp">Home</a>
-                      </li>
-                      <li>
-                         <a href="#">Admin</a>
-                      </li>
-                      <li>
-                         <a href="#">Nuovo Dipendente</a>
-                      </li>
-                  </ul>
-             </div>
-   <div class=" row">
+ <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="HomePageAdmin.jsp">Home</a>
+        </li>
+        <li>
+            <a href="#">Admin</a>
+        </li>
+        <li>
+            <a href="#">Nuova Busta Paga</a>
+        </li>
+    </ul>
+</div>
+
+<div class=" row">
    <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> Registra Nuovo Dipendente</h2>
+                <h2><i class="glyphicon glyphicon-edit"></i> Registra Nuova Busta Paga</h2>
             <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
                             class="glyphicon glyphicon-cog"></i></a>
@@ -55,46 +59,31 @@ if(admin.isValid()){
              </div>
              </div>
              <div class="box-content">
-             <form role="form" action="doRegistrazioneNuovoDipendente.jsp" method="post">
-             
-                    <div class="form-group">
-                        <label>Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Inserisci Nome" >
-                    </div>
+             <form action="doRegistrazioneBustaPaga.jsp" method="post">
+       
+                        Dipendente: <select id="dipendente">
+                        <% 
+                        Gestione g = new Gestione();
+    					List<Dipendente> lista = g.getTuttiDipendenti();
+    					session.setAttribute("lista", lista);
+    					
+                        %>
+                                <c:forEach items="${lista}" var="dipendente">
+								            <option><c:out value="${dipendente.nome} ${dipendente.cognome}" /></option>
+                                </c:forEach> 
+                        </select><br>
+                        
+                        Data Emissione: <input type="text" id="dataEmissione" placeholder="Data Emissione" readonly/><br>
+                        Importo: <input type="text" id="importo" placeholder="Importo"/><br>
                     
-                    <div class="form-group">
-                        <label>Cognome</label>
-                        <input type="text" class="form-control" id="cognome" placeholder="Inserisci Cognome">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Inserisci Username">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Inserisci Password">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Posizione</label>
-                        <input type="text" class="form-control" id="posizione" placeholder="Inserisci Posizione">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Stipendio</label>
-                        <input type="text" class="form-control" id="stipendio" placeholder="Inserisci Stipendio">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-default">Registra</button>
+                        <button type="submit">Registra</button>
                     
              </form>
         </div>
       </div>
    </div>
    </div>
-   
+
 <hr>
    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
@@ -115,16 +104,10 @@ if(admin.isValid()){
             </div>
          </div>
     </div>
-    
     </div>
-  
+    
+   
   <jsp:include page="../footer.jsp"></jsp:include>
   </div>
   </div> <!--  end of container -->
   <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
-
-<%
-}else {
-	response.sendRedirect("../Accesso/login.jsp");
-}
-%>

@@ -15,10 +15,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-    	<groupId>javax.servlet</groupId>
-    	<artifactId>javax.servlet-api</artifactId>
-    	<version>3.0.1</version>
-    	<scope>provided</scope>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
     </dependency>
     <dependency>
     	<groupId>org.hibernate</groupId>
@@ -41,7 +40,24 @@
         <version>2.7</version>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>AziendaMaven</finalName>
+    <pluginManagement>
+<plugins>
+
+   <plugin>
+     <groupId>org.apache.maven.plugins</groupId>
+     <artifactId>maven-compiler-plugin</artifactId>
+     <version>2.1</version>
+     <configuration>
+         <source>1.7</source>
+         <target>1.7</target>
+     </configuration>
+   </plugin>
+
+</plugins>
+
+</pluginManagement>
   </build>
 </project>

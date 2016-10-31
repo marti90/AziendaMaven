@@ -13,9 +13,9 @@
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="navBarAdmin.jsp"></jsp:include>
 
-<% 
-if(admin.isValid()){
-%> 
+<%-- <%  --%>
+// if(admin.isValid()){
+<%-- %>  --%>
 
 <div class="ch-container">
       <div class="row">
@@ -142,8 +142,8 @@ if(admin.isValid()){
 
 <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>      
 
-<%
-}else {
-	response.sendRedirect("../Login/Login.jsp");
-}
-%>
+<%-- <% --%>
+// }else {
+// 	response.sendRedirect("../Login/Login.jsp");
+// }
+<%-- %> --%>

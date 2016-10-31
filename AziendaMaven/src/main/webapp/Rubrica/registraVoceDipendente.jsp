@@ -8,9 +8,9 @@
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="../Dipendente/navBarDipendente.jsp"></jsp:include>
 
-<%
-if(dipendente.isValid()){
-%> 
+<%-- <% --%>
+// if(dipendente.isValid()){
+<%-- %>  --%>
 
 <div class="ch-container">
    <div class="row">
@@ -109,8 +109,8 @@ if(dipendente.isValid()){
   </div> <!--  end of container -->
   <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
 
-<%
-}else {
-	response.sendRedirect("../Login/Login.jsp");
-}
-%>
+<%-- <% --%>
+// }else {
+// 	response.sendRedirect("../Login/Login.jsp");
+// }
+<%-- %> --%>

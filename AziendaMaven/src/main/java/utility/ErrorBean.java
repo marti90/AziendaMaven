@@ -9,10 +9,10 @@ public class ErrorBean implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String error="";	
+	private String error;	
 	
 	public ErrorBean() {
-		
+		this.error="";
 	}
 
 	public ErrorBean(String error) {

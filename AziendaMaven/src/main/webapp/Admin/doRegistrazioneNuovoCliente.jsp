@@ -17,10 +17,8 @@
     
     Gestione g= new Gestione();
     
-    if(c.isValid() && g.getUtenteConUsername(username)==null) {
+    if(g.getUtenteConUsername(c.getUsername())==null) {
     	
-    	password=g.convertiPass(password);
-    	c.setPassword(password);
         g.registraCliente(c);
         g.registraRubrica(username);
         

@@ -16,7 +16,7 @@
          </div>
          
          <div class="row">
-         <%=error.getError() %> 
+         <%=error.getError()%>
          <div class="well col-md-5 center login-box">
              <div class="alert alert-info">
                  Effettuare il Login inserendo Username e Password

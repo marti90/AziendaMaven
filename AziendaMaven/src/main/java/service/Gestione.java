@@ -154,7 +154,7 @@ private VoceDAO vDao= new VoceDAO();
     public boolean eliminaVoceDaRubrica(RubricaModel r, String nome, String cognome){
     	
     	boolean res = false;
-    	VoceModel v = vDao.trovaVoce(nome, cognome, r.getId_rubrica());
+    	VoceModel v = vDao.readVoce(nome, cognome, r.getId_rubrica());
     	res= vDao.deleteVoce(v);
     	return res;
     }

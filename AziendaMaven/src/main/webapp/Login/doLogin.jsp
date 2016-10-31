@@ -29,7 +29,7 @@
         	String password = request.getParameter("password");
         	
         	Utente u  = g.getUtenteConUsername(username);
-        	password=g.convertiPass(password);
+        	
         	
         	if(u==null){
         		error.setError("Errore! Username o Password non corretti!");

@@ -53,7 +53,7 @@ public class UtenteDAO {
 			tx = session.getTransaction();
 			tx.begin();
 			
-			Query query=session.createQuery("from UtenteBean where username=:usernameInserito");
+			Query query=session.createQuery("from Utente where username=:usernameInserito");
 			query.setString("usernameInserito", username);
 	        u=(Utente) query.uniqueResult();
 				
