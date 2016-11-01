@@ -23,7 +23,7 @@
     	g.registraBusta(bp.getDipendente(), bp);
     	
     	%>
-    	<jsp:forward page="HomePageAdmin.jsp"/>
+    	<jsp:forward page="../Admin/HomePageAdmin.jsp"/>
         <%
     } else {
     	error.setError("ATTENZIONE! Dati inseriti non corretti!");

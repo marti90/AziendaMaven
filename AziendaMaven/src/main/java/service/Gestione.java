@@ -194,12 +194,28 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		}
 		
 		return res;
-
 	}
+    
+    public BustaPaga getBustaConId(long id_busta){
+		
+		BustaPaga bp = bDao.readBustaPaga(id_busta);
+		return bp;
+	}
+    
+    public boolean eliminaBusta(BustaPaga bp){
+		
+		return bDao.deleteBustaPaga(bp);
+	}
+
     public List<BustaPaga> getTutteBuste(){
 		
 		return bDao.readBustePaga();
 	}
+    
+    public List<BustaPaga> getTutteBusteDipendente(Dipendente d){
+    	
+    	return bDao.readBustePagaDipendente(d.getId_utente());
+    }
     
     public String convertiPass(String pass){
 		

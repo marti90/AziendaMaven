@@ -11,15 +11,13 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="HomePageCliente.jsp"><i class="glyphicon glyphicon-home"></i><span>  Home</span></a>
                         </li>
-                        <li><a class="ajax-link" href="RegistrazioneNuovoCliente.jsp"><i class="glyphicon glyphicon-plus"></i><span>  Nuova Voce</span></a>
+                        <li><a class="ajax-link" href="../Rubrica/registraVoceCliente.jsp"><i class="glyphicon glyphicon-plus"></i><span>  Nuova Voce</span></a>
                         </li>
-                        <li><a class="ajax-link" href="elencoClienti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Voci</span></a>
+                        <li><a class="ajax-link" href="../Rubrica/elencoContattiCliente.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Voci</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Trova Voce</span></a>
+                        <li><a class="ajax-link" href="../Rubrica/TrovaVoceCliente.jsp"><i class="glyphicon glyphicon-font"></i><span> Trova Voce</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Le Mie Buste Paga</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-edit"></i><span> Documenti</span></a></li>
+                        <li><a class="ajax-link" href="FileSystemCliente.jsp"><i class="glyphicon glyphicon-edit"></i><span> Documenti</span></a></li>
                         <li class="nav-header hidden-md">Sample Section</li>
                         <li><a href="../Login/Login.jsp"><i class="glyphicon glyphicon-lock"></i><span> Login Page</span></a>
                         </li>

@@ -7,18 +7,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 
-<jsp:useBean id="admin" class="modelBean.Admin" scope="request"></jsp:useBean>
+<jsp:useBean id="dipendente" class="modelBean.Dipendente" scope="request"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
-<jsp:include page="navBarAdmin.jsp"></jsp:include>
+<jsp:include page="../Dipendente/navBarDipendente.jsp"></jsp:include>
 
 <% 
- if(admin.isValid()){
+ if(dipendente.isValid()){
 %> 
 
 <div class="ch-container">
       <div class="row">
-           <jsp:include page="menuLateraleAdmin.jsp"></jsp:include>
+           <jsp:include page="../Dipendente/menuLateraleDipendente.jsp"></jsp:include>
            
            <noscript>
                <div class="alert alert-block col-md-12">
@@ -34,10 +34,10 @@
                <div>
                     <ul class="breadcrumb">
                         <li>
-                            <a href="HomePageAdmin.jsp">Home</a>
+                            <a href="../Dipendente/HomePageDipendente.jsp">Home</a>
                         </li>
                         <li>
-                            <a href="#">Admin</a>
+                            <a href="#">Dipendente</a>
                         </li>
                         <li>
                             <a href="#">Elenco Buste Paga</a>
@@ -62,8 +62,6 @@
                           <thead>
 		                        <tr>
 			                            <th>Numero</th>
-			                            <th>Nome Dipendente</th>
-			                            <th>Cognome Dipendente</th>
 		                            	<th>Data Emissione</th>
 		                            	<th>Importo</th>
 		                            	<th>Azioni</th>
@@ -75,7 +73,7 @@
 
 	                   <%
 		                    Gestione g= new Gestione();
-	                    	List<BustaPaga> lista = g.getTutteBuste();
+	                    	List<BustaPaga> lista = g.getTutteBusteDipendente(dipendente);
 		                    session.setAttribute("lista", lista);
               
                        %>
@@ -84,8 +82,6 @@
                       <c:forEach items="${lista}" var="busta">
                       <tr>
                                 <td class="center"><c:out value="${i}" /></td>
-                                <td class="center">${busta.dipendente.nome}</td>
-                                <td class="center"><c:out value="${busta.dipendente.cognome}"></c:out></td>
                                 <td class="center"><c:out value="${busta.dataEmissione}"></c:out></td>
                                 <td class="center"><c:out value="${busta.importo}"></c:out></td>
                                 

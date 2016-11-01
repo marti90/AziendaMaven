@@ -14,12 +14,12 @@
 <jsp:useBean id="admin" class="modelBean.Admin" scope="session"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
-<jsp:include page="navBarAdmin.jsp"></jsp:include>
+<jsp:include page="../Admin/navBarAdmin.jsp"></jsp:include>
 
 <div class="ch-container">
    <div class="row">
         
-        <jsp:include page="menuLateraleAdmin.jsp"></jsp:include>
+        <jsp:include page="../Admin/menuLateraleAdmin.jsp"></jsp:include>
         <noscript>
             <div class="alert alert-block col-md-12">
                 <h4 class="alert-heading">Warning!</h4>
@@ -34,7 +34,7 @@
  <div>
     <ul class="breadcrumb">
         <li>
-            <a href="HomePageAdmin.jsp">Home</a>
+            <a href="../Admin/HomePageAdmin.jsp">Home</a>
         </li>
         <li>
             <a href="#">Admin</a>
