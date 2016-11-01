@@ -79,7 +79,6 @@
 		                    Gestione g= new Gestione();
 	                    	List<Cliente> lista = g.getTuttiClienti();
 		                    session.setAttribute("lista", lista);
-              
                        %>
                        
                       <c:set var="i" value="1" scope="page" />
@@ -91,15 +90,18 @@
                                 <td class="center"><c:out value="${cliente.username}"></c:out></td>
                                 <td class="center"><c:out value="${cliente.ragioneSociale}"></c:out></td>
                                 <td class="center"><c:out value="${cliente.pIva}"></c:out></td>
+      
                                 <td class="center">
-                                     <a class="btn btn-info" href="#">
+                                     <form action="editCliente.jsp" method="post">
+                                          <input type="hidden" value="${cliente.username}" name="username"/>
                                           <i class="glyphicon glyphicon-edit icon-white"></i>
                                           Edit
-                                     </a>
-                                     <a class="btn btn-danger" href="#">
+                                     </form>
+                                     <form action="deleteCliente.jsp" method="post">
+                                          <input type="hidden" value="${cliente.username}" name="username"/>
+                                          <button type="submit" class="btn btn-danger">Delete</button>
                                           <i class="glyphicon glyphicon-trash icon-white"></i>
-                                          Delete
-                                     </a>
+                                     </form>
                                 </td>
                       
                        </tr>

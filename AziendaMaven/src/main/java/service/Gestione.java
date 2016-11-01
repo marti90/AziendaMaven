@@ -53,6 +53,11 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		return u;
 	}
 	
+	public boolean eliminaUtente(Utente u){
+		
+		return uDao.deleteUtente(u);
+	}
+	
 	public List<Utente> getTuttiUtenti(){
 		
 		return uDao.readUtenti();
@@ -62,6 +67,11 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		
 		Admin a = aDao.readAdmin(username);
 		return a;
+	}
+    
+    public boolean eliminaAdmin(Admin a){
+		
+		return aDao.deleteAdmin(a);
 	}
 
     public boolean registraCliente(Cliente c){
@@ -75,6 +85,11 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		
 		Cliente c = cDao.readCliente(username);
 		return c;
+	}
+    
+    public boolean eliminaCliente(Cliente c){
+		
+		return cDao.deleteCliente(c);
 	}
     
     public List<Cliente> getTuttiClienti(){
@@ -94,6 +109,11 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		
 		Dipendente d = dDao.readDipendente(username);
 		return d;
+	}
+    
+    public boolean eliminaDipendente(Dipendente d){
+		
+		return dDao.deleteDipendente(d);
 	}
     
     public List<Dipendente> getTuttiDipendenti(){
@@ -127,7 +147,6 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		}
 		
 		return res;
-
 	}
     
     public VoceModel getVoce(RubricaModel r, VoceModel v){

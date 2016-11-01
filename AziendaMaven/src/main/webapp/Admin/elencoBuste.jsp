@@ -88,15 +88,18 @@
                                 <td class="center"><c:out value="${busta.dipendente.cognome}"></c:out></td>
                                 <td class="center"><c:out value="${busta.dataEmissione}"></c:out></td>
                                 <td class="center"><c:out value="${busta.importo}"></c:out></td>
+                                
                                 <td class="center">
-                                     <a class="btn btn-info" href="#">
+                                     <form action="editBusta.jsp" method="post">
+                                          <input type="hidden" value="${busta.id_busta}" name="id"/>
                                           <i class="glyphicon glyphicon-edit icon-white"></i>
                                           Edit
-                                     </a>
-                                     <a class="btn btn-danger" href="#">
+                                     </form>
+                                     <form action="deleteBusta.jsp" method="post">
+                                          <input type="hidden" value="${busta.id_busta}" name="id"/>
+                                          <button type="submit" class="btn btn-danger">Delete</button>
                                           <i class="glyphicon glyphicon-trash icon-white"></i>
-                                          Delete
-                                     </a>
+                                     </form>
                                 </td>
                       
                        </tr>

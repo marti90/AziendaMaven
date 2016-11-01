@@ -90,15 +90,18 @@ if(admin.isValid()){
                                 <td class="center"><c:out value="${dipendente.username}"></c:out></td>
                                 <td class="center"><c:out value="${dipendente.posizione}"></c:out></td>
                                 <td class="center"><c:out value="${dipendente.stipendio}"></c:out></td>
+                                
                                 <td class="center">
-                                     <a class="btn btn-info" href="#">
+                                     <form action="editDipendente.jsp" method="post">
+                                          <input type="hidden" value="${dipendente.username}" name="username"/>
                                           <i class="glyphicon glyphicon-edit icon-white"></i>
                                           Edit
-                                     </a>
-                                     <a class="btn btn-danger" href="#">
+                                     </form>
+                                     <form action="deleteDipendente.jsp" method="post">
+                                          <input type="hidden" value="${dipendente.username}" name="username"/>
+                                          <button type="submit" class="btn btn-danger">Delete</button>
                                           <i class="glyphicon glyphicon-trash icon-white"></i>
-                                          Delete
-                                     </a>
+                                     </form>
                                 </td>
                       
                        </tr>
