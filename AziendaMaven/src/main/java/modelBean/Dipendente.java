@@ -1,8 +1,16 @@
 package modelBean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 @Entity
 public class Dipendente extends Utente implements Serializable{
@@ -13,6 +21,10 @@ public class Dipendente extends Utente implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private double stipendio;
 	private String posizione;
+	
+	@OneToMany(mappedBy="dipendente", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@NotFound(action=NotFoundAction.IGNORE)
+	private List<BustaPaga> bustePaga = new ArrayList<BustaPaga>();
 	
 	public Dipendente(){
 		super();
@@ -39,7 +51,23 @@ public class Dipendente extends Utente implements Serializable{
 	public void setPosizione(String posizione) {
 		this.posizione = posizione;
 	}
+
+	public List<BustaPaga> getBustePaga() {
+		return bustePaga;
+	}
+
+	public void setBustePaga(List<BustaPaga> bustePaga) {
+		this.bustePaga = bustePaga;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
+	public void aggiungiBusta(BustaPaga bp){
+		bustePaga.add(bp);
+	}
+
 	public boolean isValid() {
 
 		boolean res=false;

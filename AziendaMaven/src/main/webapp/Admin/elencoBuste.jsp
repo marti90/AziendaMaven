@@ -1,10 +1,9 @@
-<%@page import="modelBean.Utente"%>
-<%@page import="modelBean.Cliente"%>
+<%@page import="modelBean.BustaPaga"%>
 <%@page import="java.util.List"%>
 <%@page import="service.Gestione"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 
@@ -41,7 +40,7 @@
                             <a href="#">Admin</a>
                         </li>
                         <li>
-                            <a href="#">Elenco Clienti</a>
+                            <a href="#">Elenco Buste Paga</a>
                         </li>
                     </ul>
                </div>
@@ -51,7 +50,7 @@
                   <div class="box col-md-12">
                   <div class="box-inner">
                   <div class="box-header well" data-original-title="">
-                          <h2><i class="glyphicon glyphicon-th-list"></i> Elenco Clienti</h2>
+                          <h2><i class="glyphicon glyphicon-th-list"></i> Elenco Buste Paga</h2>
                   <div class="box-icon">
                           <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>
                           <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
@@ -63,11 +62,10 @@
                           <thead>
 		                        <tr>
 			                            <th>Numero</th>
-			                            <th>Nome</th>
-		                            	<th>Cognome</th>
-		                            	<th>Username</th>
-		                            	<th>Ragione Sociale</th>
-		                            	<th>Partita IVA</th>
+			                            <th>Nome Dipendente</th>
+			                            <th>Cognome Dipendente</th>
+		                            	<th>Data Emissione</th>
+		                            	<th>Importo</th>
 		                            	<th>Azioni</th>
 			
 	                        	</tr>
@@ -77,20 +75,19 @@
 
 	                   <%
 		                    Gestione g= new Gestione();
-	                    	List<Cliente> lista = g.getTuttiClienti();
+	                    	List<BustaPaga> lista = g.getTutteBuste();
 		                    session.setAttribute("lista", lista);
               
                        %>
                        
                       <c:set var="i" value="1" scope="page" />
-                      <c:forEach items="${lista}" var="cliente">
+                      <c:forEach items="${lista}" var="busta">
                       <tr>
                                 <td class="center"><c:out value="${i}" /></td>
-                                <td class="center">${cliente.nome}</td>
-                                <td class="center"><c:out value="${cliente.cognome}"></c:out></td>
-                                <td class="center"><c:out value="${cliente.username}"></c:out></td>
-                                <td class="center"><c:out value="${cliente.ragioneSociale}"></c:out></td>
-                                <td class="center"><c:out value="${cliente.pIva}"></c:out></td>
+                                <td class="center">${busta.dipendente.nome}</td>
+                                <td class="center"><c:out value="${busta.dipendente.cognome}"></c:out></td>
+                                <td class="center"><c:out value="${busta.dataEmissione}"></c:out></td>
+                                <td class="center"><c:out value="${busta.importo}"></c:out></td>
                                 <td class="center">
                                      <a class="btn btn-info" href="#">
                                           <i class="glyphicon glyphicon-edit icon-white"></i>

@@ -5,10 +5,11 @@
     pageEncoding="ISO-8859-1"%>
 </html><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
-<script type="text/javascript" src="jQueryBuste.js"></script>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="jQueryBuste.js"></script>
 
 <jsp:useBean id="admin" class="modelBean.Admin" scope="session"></jsp:useBean>
 
@@ -61,7 +62,8 @@
              <div class="box-content">
              <form action="doRegistrazioneBustaPaga.jsp" method="post">
        
-                        Dipendente: <select id="dipendente">
+                        Dipendente: <select id="dipendente" style="width: 150px;">
+                        <option value=""></option>
                         <% 
                         Gestione g = new Gestione();
     					List<Dipendente> lista = g.getTuttiDipendenti();
@@ -73,8 +75,8 @@
                                 </c:forEach> 
                         </select><br>
                         
-                        Data Emissione: <input type="text" id="dataEmissione" placeholder="Data Emissione" readonly/><br>
-                        Importo: <input type="text" id="importo" placeholder="Importo"/><br>
+                        Data Emissione: <input type="text" id="dataEmissione" name="dataEmissione" placeholder="Data Emissione" readonly/><br>
+                        Importo: <input type="text" id="importo" name="importo" placeholder="Importo"/><br>
                     
                         <button type="submit">Registra</button>
                     

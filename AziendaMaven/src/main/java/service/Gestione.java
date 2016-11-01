@@ -3,12 +3,14 @@ package service;
 import java.util.List;
 
 import modelBean.Admin;
+import modelBean.BustaPaga;
 import modelBean.Cliente;
 import modelBean.Dipendente;
 import modelBean.Utente;
 import modelRubrica.RubricaModel;
 import modelRubrica.VoceModel;
 import dao.AdminDAO;
+import dao.BustaPagaDAO;
 import dao.ClienteDAO;
 import dao.DipendenteDAO;
 import dao.RubricaDAO;
@@ -23,7 +25,8 @@ private AdminDAO aDao = new AdminDAO();
 private ClienteDAO cDao = new ClienteDAO();
 private DipendenteDAO dDao = new DipendenteDAO();
 private RubricaDAO rDao= new RubricaDAO();
-private VoceDAO vDao= new VoceDAO();
+private VoceDAO vDao = new VoceDAO();
+private BustaPagaDAO bDao= new BustaPagaDAO();
 	
 	public boolean registraUtente(Utente u){
 		
@@ -158,6 +161,26 @@ private VoceDAO vDao= new VoceDAO();
     	res= vDao.deleteVoce(v);
     	return res;
     }
+    
+    public boolean registraBusta(Dipendente d, BustaPaga bp) {
+		
+    	boolean res = false;
+		bp.setDipendente(d);
+		d.aggiungiBusta(bp);
+		boolean b = bDao.createBustaPaga(bp);
+		dDao.updateDipendente(d);
+		if(b==true)
+		{
+			res =true;
+		}
+		
+		return res;
+
+	}
+    public List<BustaPaga> getTutteBuste(){
+		
+		return bDao.readBustePaga();
+	}
     
     public String convertiPass(String pass){
 		
