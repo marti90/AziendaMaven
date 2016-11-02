@@ -9,17 +9,17 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="HomePageAdmin.jsp"><i class="glyphicon glyphicon-home"></i><span>  Home</span></a>
+                        <li><a class="ajax-link" href="../Admin/HomePageAdmin.jsp"><i class="glyphicon glyphicon-home"></i><span>  Home</span></a>
                         </li>
-                        <li><a class="ajax-link" href="RegistrazioneNuovoCliente.jsp"><i class="glyphicon glyphicon-plus"></i><span>  Nuovo Cliente</span></a>
+                        <li><a class="ajax-link" href="../Admin/RegistrazioneNuovoCliente.jsp"><i class="glyphicon glyphicon-plus"></i><span>  Nuovo Cliente</span></a>
                         </li>
-                        <li><a class="ajax-link" href="elencoClienti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Clienti</span></a>
+                        <li><a class="ajax-link" href="../Admin/elencoClienti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Clienti</span></a>
                         </li>
-                        <li><a class="ajax-link" href="RegistrazioneNuovoDipendente.jsp"><i class="glyphicon glyphicon-plus"></i><span>  Nuovo Dipendente</span></a>
+                        <li><a class="ajax-link" href="../Admin/RegistrazioneNuovoDipendente.jsp"><i class="glyphicon glyphicon-plus"></i><span>  Nuovo Dipendente</span></a>
                         </li>
-                        <li><a class="ajax-link" href="elencoDipendenti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Dipendenti</span></a>
+                        <li><a class="ajax-link" href="../Admin/elencoDipendenti.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Dipendenti</span></a>
                         </li>
-                        <li><a class="ajax-link" href="RegistrazioneBustaPaga.jsp"><i class="glyphicon glyphicon-edit"></i><span> Emissione Busta Paga</span></a>
+                        <li><a class="ajax-link" href="../BustePaga/RegistrazioneBustaPaga.jsp"><i class="glyphicon glyphicon-edit"></i><span> Emissione Busta Paga</span></a>
                         </li>
                         <li><a class="ajax-link" href="elencoBuste.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Buste Paga</span></a>
                         </li>
