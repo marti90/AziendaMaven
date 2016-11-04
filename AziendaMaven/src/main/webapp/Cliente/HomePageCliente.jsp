@@ -4,13 +4,8 @@
 <%@ page isELIgnored="false" %>
 
 <jsp:useBean id="cliente" class="modelBean.Cliente" scope="session"></jsp:useBean>
-
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="navBarCliente.jsp"></jsp:include>
-
-<% 
-if(cliente.isValid()){
-%>
 
 <div class="ch-container">
    <div class="row">
@@ -73,11 +68,4 @@ if(cliente.isValid()){
 </div><!--/.fluid-container-->
 
 <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
-
-<%
-   }else {
-	   response.sendRedirect("../Login/Login.jsp");
-   }
-%>
-
-    
+   

@@ -8,10 +8,6 @@
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="../Cliente/navBarCliente.jsp"></jsp:include>
 
-<%
-if(cliente.isValid()){
-%> 
-
 <div class="ch-container">
    <div class="row">
         
@@ -60,17 +56,17 @@ if(cliente.isValid()){
              
                     <div class="form-group">
                         <label>Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Inserisci Nome" >
+                        <input type="text" class="form-control" name="nome" placeholder="Inserisci Nome" >
                     </div>
                     
                     <div class="form-group">
                         <label>Cognome</label>
-                        <input type="text" class="form-control" id="cognome" placeholder="Inserisci Cognome">
+                        <input type="text" class="form-control" name="cognome" placeholder="Inserisci Cognome">
                     </div>
                     
                     <div class="form-group">
                         <label>Telefono</label>
-                        <input type="text" class="form-control" id="username" placeholder="Inserisci Username">
+                        <input type="text" class="form-control" name="username" placeholder="Inserisci Username">
                     </div>
                     
                     <button type="submit" class="btn btn-default">Registra</button>
@@ -108,9 +104,3 @@ if(cliente.isValid()){
   </div>
   </div> <!--  end of container -->
   <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
-
-<%
-}else {
-	response.sendRedirect("../Login/Login.jsp");
-}
-%>

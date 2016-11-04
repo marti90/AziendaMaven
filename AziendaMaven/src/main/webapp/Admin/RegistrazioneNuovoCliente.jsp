@@ -8,6 +8,9 @@
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="navBarAdmin.jsp"></jsp:include>
 
+<% 
+if(admin.isValid()){
+%>   
 <div class="ch-container">
    <div class="row">
         
@@ -56,32 +59,32 @@
              
                     <div class="form-group">
                         <label>Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Inserisci Nome" >
+                        <input type="text" class="form-control" name="nome" placeholder="Inserisci Nome" >
                     </div>
                     
                     <div class="form-group">
                         <label>Cognome</label>
-                        <input type="text" class="form-control" id="cognome" placeholder="Inserisci Cognome">
+                        <input type="text" class="form-control" name="cognome" placeholder="Inserisci Cognome">
                     </div>
                     
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Inserisci Username">
+                        <input type="text" class="form-control" name="username" placeholder="Inserisci Username">
                     </div>
                     
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Inserisci Password">
+                        <input type="password" class="form-control" name="password" placeholder="Inserisci Password">
                     </div>
                     
                     <div class="form-group">
                         <label>Ragione Sociale</label>
-                        <input type="text" class="form-control" id="ragioneSociale" placeholder="Inserisci Ragione Sociale">
+                        <input type="text" class="form-control" name="ragioneSociale" placeholder="Inserisci Ragione Sociale">
                     </div>
                     
                     <div class="form-group">
                         <label>Partita IVA</label>
-                        <input type="text" class="form-control" id="partitaIva" placeholder="Inserisci Partita IVA">
+                        <input type="text" class="form-control" name="partitaIva" placeholder="Inserisci Partita IVA">
                     </div>
                     
                     <button type="submit" class="btn btn-default">Registra</button>
@@ -119,3 +122,8 @@
   </div>
   </div> <!--  end of container -->
   <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
+<%
+}else {
+	response.sendRedirect("../Login/Login.jsp");
+}
+%>

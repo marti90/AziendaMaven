@@ -59,32 +59,32 @@ if(admin.isValid()){
              
                     <div class="form-group">
                         <label>Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Inserisci Nome" >
+                        <input type="text" class="form-control" name="nome" placeholder="Inserisci Nome" >
                     </div>
                     
                     <div class="form-group">
                         <label>Cognome</label>
-                        <input type="text" class="form-control" id="cognome" placeholder="Inserisci Cognome">
+                        <input type="text" class="form-control" name="cognome" placeholder="Inserisci Cognome">
                     </div>
                     
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Inserisci Username">
+                        <input type="text" class="form-control" name="username" placeholder="Inserisci Username">
                     </div>
                     
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Inserisci Password">
+                        <input type="password" class="form-control" name="password" placeholder="Inserisci Password">
                     </div>
                     
                     <div class="form-group">
                         <label>Posizione</label>
-                        <input type="text" class="form-control" id="posizione" placeholder="Inserisci Posizione">
+                        <input type="text" class="form-control" name="posizione" placeholder="Inserisci Posizione">
                     </div>
                     
                     <div class="form-group">
                         <label>Stipendio</label>
-                        <input type="text" class="form-control" id="stipendio" placeholder="Inserisci Stipendio">
+                        <input type="text" class="form-control" name="stipendio" placeholder="Inserisci Stipendio">
                     </div>
                     
                     <button type="submit" class="btn btn-default">Registra</button>
@@ -125,6 +125,6 @@ if(admin.isValid()){
 
 <%
 }else {
-	response.sendRedirect("../Accesso/login.jsp");
+	response.sendRedirect("../Login/Login.jsp");
 }
 %>
