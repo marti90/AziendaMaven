@@ -8,10 +8,6 @@
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="navBarDipendente.jsp"></jsp:include>
 
-<% 
-if(dipendente.isValid()){
-%>
-
 <div class="ch-container">
    <div class="row">
         
@@ -73,11 +69,3 @@ if(dipendente.isValid()){
 </div><!--/.fluid-container-->
 
 <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
-
-<%
-   }else {
-	   response.sendRedirect("../Login/Login.jsp");
-   }
-%>
-
-    

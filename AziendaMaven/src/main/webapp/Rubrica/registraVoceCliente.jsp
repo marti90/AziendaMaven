@@ -66,7 +66,7 @@
                     
                     <div class="form-group">
                         <label>Telefono</label>
-                        <input type="text" class="form-control" name="username" placeholder="Inserisci Username">
+                        <input type="text" class="form-control" name="telefono" placeholder="Inserisci Telefono">
                     </div>
                     
                     <button type="submit" class="btn btn-default">Registra</button>

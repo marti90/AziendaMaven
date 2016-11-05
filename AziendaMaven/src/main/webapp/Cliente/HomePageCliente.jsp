@@ -4,6 +4,7 @@
 <%@ page isELIgnored="false" %>
 
 <jsp:useBean id="cliente" class="modelBean.Cliente" scope="session"></jsp:useBean>
+
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="navBarCliente.jsp"></jsp:include>
 

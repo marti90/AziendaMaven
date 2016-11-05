@@ -149,6 +149,12 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		return res;
 	}
     
+    public VoceModel getVoceConId(long id){
+    	
+    	VoceModel v = vDao.readVoceConId(id);
+    	return v;
+    }
+    
     public VoceModel getVoce(RubricaModel r, VoceModel v){
     	
     	VoceModel voce=null;

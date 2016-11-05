@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 
-<jsp:useBean id="dipendente" class="modelBean.Dipendente" scope="request"></jsp:useBean>
+<jsp:useBean id="dipendente" class="modelBean.Dipendente" scope="session"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="../Dipendente/navBarDipendente.jsp"></jsp:include>
@@ -92,10 +92,11 @@ if(dipendente.isValid()){
                                           <i class="glyphicon glyphicon-edit icon-white"></i>
                                           Edit
                                      </a>
-                                     <a class="btn btn-danger" href="#">
+                                     <form action="deleteVoceDipendente.jsp" method="post">
+                                          <input type="hidden" value="${voce.id_voce}" name="id_voce"/>
+                                          <button type="submit" class="btn btn-danger">Delete</button>
                                           <i class="glyphicon glyphicon-trash icon-white"></i>
-                                          Delete
-                                     </a>
+                                     </form>
                                 </td>
                       
                        </tr>

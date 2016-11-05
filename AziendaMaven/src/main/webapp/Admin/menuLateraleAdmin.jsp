@@ -21,12 +21,12 @@
                         </li>
                         <li><a class="ajax-link" href="../BustePaga/RegistrazioneBustaPaga.jsp"><i class="glyphicon glyphicon-edit"></i><span> Emissione Busta Paga</span></a>
                         </li>
-                        <li><a class="ajax-link" href="elencoBuste.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Buste Paga</span></a>
+                        <li><a class="ajax-link" href="../BustePaga/elencoBuste.jsp"><i class="glyphicon glyphicon-list-alt"></i><span>  Elenco Buste Paga</span></a>
                         </li>
                         <li class="nav-header hidden-md">Sample Section</li>
                         <li><a href="../Login/Login.jsp"><i class="glyphicon glyphicon-lock"></i><span> Login Page</span></a>
                         </li>
-                        <li><a href="../Login/Logout.jsp"><i class="glyphicon glyphicon-lock"></i><span> Logout Page</span></a>
+                        <li><a href="../Login/doLogout.jsp"><i class="glyphicon glyphicon-lock"></i><span> Logout Page</span></a>
                         </li>
                     </ul>
                     <label id="for-is-ajax" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>

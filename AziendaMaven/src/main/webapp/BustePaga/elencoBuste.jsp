@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 
-<jsp:useBean id="admin" class="modelBean.Admin" scope="request"></jsp:useBean>
+<jsp:useBean id="admin" class="modelBean.Admin" scope="session"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="../Admin/navBarAdmin.jsp"></jsp:include>

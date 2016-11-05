@@ -72,8 +72,8 @@ public class VoceDAO {
 		tx=session.getTransaction();
 		tx.begin();
 
-		Query query=session.createQuery("from VoceModel where RubricaModel_id_rubrica=:idInserito and nome=:nomeInserito and cognome=:cognomeInserito");
-		query.setLong("idInserito", id_rubrica);
+		Query query=session.createQuery("from VoceModel where rubrica=:rubricaInserita and nome=:nomeInserito and cognome=:cognomeInserito");
+		query.setLong("rubricaInserita", id_rubrica);
 		query.setString("nomeInserito", nome);
 		query.setString("cognomeInserito", cognome);
 		v=(VoceModel) query.uniqueResult();

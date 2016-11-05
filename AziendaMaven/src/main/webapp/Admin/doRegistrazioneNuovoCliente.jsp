@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-<jsp:useBean id="cliente" class="modelBean.Cliente" scope="request"></jsp:useBean>
+<jsp:useBean id="cliente" class="modelBean.Cliente" scope="session"></jsp:useBean>
 <jsp:useBean id="error" class="utility.ErrorBean" scope="request"></jsp:useBean>
 
 <jsp:setProperty property="*" name="cliente"/>

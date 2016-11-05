@@ -5,7 +5,7 @@
     
 <jsp:useBean id="dipendente" class="modelBean.Dipendente" scope="session"></jsp:useBean>
 <jsp:useBean id="error" class="utility.ErrorBean" scope="request"></jsp:useBean>
-<jsp:useBean id="voce" class="modelRubrica.VoceModel" scope="request"></jsp:useBean>
+<jsp:useBean id="voce" class="modelRubrica.VoceModel" scope="session"></jsp:useBean>
 <jsp:getProperty property="*" name="voce"/>
 
 <% 

@@ -5,8 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
     
-<jsp:useBean id="utente" class="modelBean.Utente" scope="request"></jsp:useBean>
-<jsp:useBean id="dipendente" class="modelBean.Dipendente" scope="request"></jsp:useBean>
+<jsp:useBean id="dipendente" class="modelBean.Dipendente" scope="session"></jsp:useBean>
 <jsp:useBean id="error" class="utility.ErrorBean" scope="request"></jsp:useBean>
   
 <jsp:setProperty property="*" name="dipendente"/>   
