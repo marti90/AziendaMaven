@@ -3,6 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false" %>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="doTrovaVoceCliente.js" ></script>
+
 <jsp:useBean id="cliente" class="modelBean.Cliente" scope="session"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
@@ -55,7 +59,7 @@ if(cliente.isValid()){
              </div>
              </div>
              <div class="box-content">
-             <form role="form" action="doTrovaVoceCliente.jsp" method="post">
+             <form>
              
                     <div class="form-group">
                         <label>Nome</label>
@@ -66,14 +70,23 @@ if(cliente.isValid()){
                         <label>Cognome</label>
                         <input type="text" class="form-control" id="cognome" placeholder="Inserisci Cognome">
                     </div>
+                    
+                    <input type="hidden" value="${cliente.username}" id="nomeRubrica"/>
                    
-                    <button type="submit" class="btn btn-default">Trova</button>
+                    <input type="button" id="btn" value="Trova" />
                     
              </form>
         </div>
       </div>
    </div>
    </div>
+   
+   <div id="risposta">
+   
+   
+   </div>
+   
+   
 <hr>
    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
