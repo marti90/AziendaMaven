@@ -90,8 +90,11 @@
                                      </a>
                                      <form action="deleteVoceCliente.jsp" method="post">
                                           <input type="hidden" value="${voce.id_voce}" name="id_voce"/>
-                                          <button type="submit" class="btn btn-danger">Delete</button>
-                                          <i class="glyphicon glyphicon-trash icon-white"></i>
+                                          <button type="submit" class="btn btn-danger">
+                                             <i class="glyphicon glyphicon-trash icon-white"></i>
+                                             Delete
+                                          </button>
+                                          
                                      </form>
                                 </td>
                       

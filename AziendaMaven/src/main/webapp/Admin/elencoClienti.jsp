@@ -93,14 +93,18 @@
       
                                 <td class="center">
                                      <form action="editCliente.jsp" method="post">
-                                          <input type="hidden" value="${cliente.username}" name="username"/>
-                                          <i class="glyphicon glyphicon-edit icon-white"></i>
-                                          Edit
+                                          <input type="hidden" value="${cliente.id_utente}" name="id"/>
+                                          <button type="submit" class="btn btn-info">
+                                             <i class="glyphicon glyphicon-edit icon-white"></i>
+                                             Edit
+                                          </button>
                                      </form>
                                      <form action="deleteCliente.jsp" method="post">
                                           <input type="hidden" value="${cliente.username}" name="username"/>
-                                          <button type="submit" class="btn btn-danger">Delete</button>
-                                          <i class="glyphicon glyphicon-trash icon-white"></i>
+                                          <button type="submit" class="btn btn-danger">
+                                             <i class="glyphicon glyphicon-trash icon-white"></i>
+                                             Delete
+                                          </button>
                                      </form>
                                 </td>
                       

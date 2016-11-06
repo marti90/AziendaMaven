@@ -85,7 +85,7 @@ if(admin.isValid()){
                       <c:forEach items="${lista}" var="dipendente">
                       <tr>
                                 <td class="center"><c:out value="${i}" /></td>
-                                <td class="center">${cliente.nome}</td>
+                                <td class="center">${dipendente.nome}</td>
                                 <td class="center"><c:out value="${dipendente.cognome}"></c:out></td>
                                 <td class="center"><c:out value="${dipendente.username}"></c:out></td>
                                 <td class="center"><c:out value="${dipendente.posizione}"></c:out></td>
@@ -93,9 +93,11 @@ if(admin.isValid()){
                                 
                                 <td class="center">
                                      <form action="editDipendente.jsp" method="post">
-                                          <input type="hidden" value="${dipendente.username}" name="username"/>
-                                          <i class="glyphicon glyphicon-edit icon-white"></i>
-                                          Edit
+                                          <input type="hidden" value="${dipendente.id_utente}" name="id"/>
+                                          <button type="submit" class="btn btn-info">
+                                             <i class="glyphicon glyphicon-edit icon-white"></i>
+                                             Edit
+                                          </button>
                                      </form>
                                      <form action="deleteDipendente.jsp" method="post">
                                           <input type="hidden" value="${dipendente.username}" name="username"/>

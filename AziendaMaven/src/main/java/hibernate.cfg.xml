@@ -14,8 +14,8 @@ lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.htm
         <!-- Database connection settings -->
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property> 
-        <property name="connection.username">aziendaMaven</property>
-        <property name="connection.password">aziendaMaven</property>
+        <property name="connection.username">Azienda2</property>
+        <property name="connection.password">Azienda2</property>
         
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>

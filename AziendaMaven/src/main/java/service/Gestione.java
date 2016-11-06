@@ -87,6 +87,12 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		return c;
 	}
     
+    public boolean aggiornaCliente(Cliente c){
+    	
+    	boolean res= cDao.updateCliente(c);
+    	return res;
+    }
+    
     public boolean eliminaCliente(Cliente c){
 		
 		return cDao.deleteCliente(c);
@@ -110,6 +116,12 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
 		Dipendente d = dDao.readDipendente(username);
 		return d;
 	}
+    
+    public boolean aggiornaDipendente(Dipendente d){
+    	
+    	boolean res= dDao.updateDipendente(d);
+    	return res;
+    }
     
     public boolean eliminaDipendente(Dipendente d){
 		
@@ -160,6 +172,12 @@ private BustaPagaDAO bDao= new BustaPagaDAO();
     	VoceModel voce=null;
     	voce= vDao.readVoce(v.getNome(), v.getCognome(), r.getId_rubrica());
     	return voce;
+    }
+    
+    public boolean aggiornaVoce(VoceModel v){
+    	
+    	boolean res= vDao.aggiornaVoce(v);
+    	return res;
     }
     
     public List<VoceModel> getVociDiUnaRubrica(RubricaModel r){

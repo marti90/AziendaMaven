@@ -47,8 +47,9 @@ public class Cliente extends Utente implements Serializable{
 				!cognome.isEmpty() && cognome!=null &&
 				!username.isEmpty() && username!=null &&
 				!password.isEmpty() && password!=null &&
-				!ragioneSociale.isEmpty() && ragioneSociale!=null &&
-				!pIva.isEmpty() && pIva!=null) {
+				!ragioneSociale.isEmpty() && ragioneSociale!=null 
+				//&& !pIva.isEmpty() && pIva!=null
+				) {
 			
 			res=true;
 		}
