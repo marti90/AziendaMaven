@@ -7,7 +7,8 @@
 <%@ page isELIgnored="false" %>
 
 <jsp:useBean id="cliente" class="modelBean.Cliente" scope="session"></jsp:useBean>
-
+<jsp:include page="../headerHtml.jsp"></jsp:include>
+<jsp:include page="navBarAdmin.jsp"></jsp:include>
 <% 
     long id_cliente =Long.parseLong(request.getParameter("id"));
     Gestione g = new Gestione();
@@ -70,31 +71,31 @@
              
                     <div class="form-group">
                         <label>Nome</label>
-                        <input type="text" class="form-control" name="nomeNuovo" placeholder="Inserisci Nome" >
+                        <input type="text" class="form-control" name="nomeNuovo" placeholder="Inserisci Nome" value="<%out.println(c.getNome());%>">
                     </div>
                     
                     <div class="form-group">
                         <label>Cognome</label>
-                        <input type="text" class="form-control" name="cognomeNuovo" placeholder="Inserisci Cognome">
+                        <input type="text" class="form-control" name="cognomeNuovo" placeholder="Inserisci Cognome" value="<%out.println(c.getCognome());%>">
                     </div>
                     
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" name="usernameNuovo" placeholder="Inserisci Username">
+                        <input type="text" class="form-control" name="usernameNuovo" placeholder="Inserisci Username" value="<%out.println(c.getUsername());%>">
                     </div>
                     
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" name="passwordNuovo" placeholder="Inserisci Password">
+                        <input type="password" class="form-control" name="passwordNuovo" placeholder="Inserisci Password" value="<%out.println(c.getPassword());%>">
                     </div>
                     
                     <div class="form-group">
                         <label>Ragione Sociale</label>
-                        <input type="text" class="form-control" name="ragioneSocialeNuovo" placeholder="Inserisci Ragione Sociale">
+                        <input type="text" class="form-control" name="ragioneSocialeNuovo" placeholder="Inserisci Ragione Sociale" value="<%out.println(c.getRagioneSociale());%>">
                     </div>
                     <div class="form-group">
                         <label>Partita IVA</label>
-                        <input type="text" class="form-control" name="partitaIvaNuovo" placeholder="Inserisci PartitaIVA">
+                        <input type="text" class="form-control" name="partitaIvaNuovo" placeholder="Inserisci PartitaIVA" value="<%out.println(c.getpIva());%>">
                     </div>
                     
                     <input type="hidden" value="${cliente.id_utente}" name="id"/>

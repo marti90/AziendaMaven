@@ -5,12 +5,13 @@
     pageEncoding="ISO-8859-1"%>
 </html><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<head>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="jQueryBuste.js"></script>
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+<body>
 <jsp:useBean id="admin" class="modelBean.Admin" scope="session"></jsp:useBean>
 
 <jsp:include page="../headerHtml.jsp"></jsp:include>
@@ -113,3 +114,4 @@
   </div>
   </div> <!--  end of container -->
   <jsp:include page="../IncludeScriptEnd.jsp"></jsp:include>
+</body>

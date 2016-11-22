@@ -10,6 +10,10 @@
 
 <jsp:useBean id="admin" class="modelBean.Admin" scope="session"></jsp:useBean>
 
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="EditDelete.js"></script>
+
 <jsp:include page="../headerHtml.jsp"></jsp:include>
 <jsp:include page="navBarAdmin.jsp"></jsp:include>
 
@@ -59,7 +63,7 @@
                   </div>
                </div>
                <div class="box-content">
-                  <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+                  <table class="table table-striped table-bordered bootstrap-datatable datatable responsive" border="1">
                           <thead>
 		                        <tr>
 			                            <th>Numero</th>
@@ -92,20 +96,22 @@
                                 <td class="center"><c:out value="${cliente.pIva}"></c:out></td>
       
                                 <td class="center">
-                                     <form action="editCliente.jsp" method="post">
+                                <form id="form" method="post">
+                                     
                                           <input type="hidden" value="${cliente.id_utente}" name="id"/>
-                                          <button type="submit" class="btn btn-info">
+                                          <button onclick="editCliente()" type="button" class="btn btn-info">
                                              <i class="glyphicon glyphicon-edit icon-white"></i>
                                              Edit
                                           </button>
-                                     </form>
-                                     <form action="deleteCliente.jsp" method="post">
+                           
+                                    
                                           <input type="hidden" value="${cliente.username}" name="username"/>
-                                          <button type="submit" class="btn btn-danger">
-                                             <i class="glyphicon glyphicon-trash icon-white"></i>
+                                          <button onclick="deleteCliente()" type="submit" class="btn btn-danger">
+                                             <i class="glyphicon glyphicon-trash icon-white" ></i>
                                              Delete
                                           </button>
-                                     </form>
+                                     
+                                </form>
                                 </td>
                       
                        </tr>
@@ -153,3 +159,6 @@
  	response.sendRedirect("../Login/Login.jsp");
  }
 %>
+
+
+  
